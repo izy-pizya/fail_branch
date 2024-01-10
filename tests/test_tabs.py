@@ -1,27 +1,17 @@
-import time
-
-import pytest
-
-import conftest
 from conftest import *
-from selenium.webdriver.common.by import By
-import XPATH
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestTabs:
     def test_go_to_personal_account(self, driver, go_to_personal_account):
-        accept_button = WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.XPATH, XPATH.accept_button)))
-        #accept_button = driver.find_elements(By.XPATH, XPATH.accept_button)
-        return len(accept_button) > 0       # у меня лен переставал работать, сутки спустя заработал
+        return len(driver.find_elements(*TestLocators.accept_button)) > 0
 
     def test_transition_from_personal_account_to_the_constructor(self, driver, go_to_personal_account):
-        WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.XPATH, XPATH.accept_button)))
-        constructor_button = driver.find_element(By.XPATH, XPATH.constructor_button)
-        constructor_button.click()
-        assert driver.find_element(By.XPATH, XPATH.assemble_the_burger).text == "Соберите бургер"
+        driver.find_element(*TestLocators.constructor_button).click()
+        assert driver.find_element(*TestLocators.assemble_the_burger).text == "Соберите бургер"
 
     def test_transition_from_personal_account_by_logo(self, driver, go_to_personal_account):
-        WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.XPATH, XPATH.accept_button)))
-        logo_button = driver.find_element(By.XPATH, XPATH.logo_button)
-        logo_button.click()
+        driver.find_element(*TestLocators.logo_button).click()
+        WebDriverWait(driver, 3).until(EC.url_contains("site"))
         assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'

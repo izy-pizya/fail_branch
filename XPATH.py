@@ -1,44 +1,48 @@
+from selenium.webdriver.common.by import By
 
-cls_login_button = '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"]'  # кнопка войти
 
-cls_registration_button = '//a[@class="Auth_link__1fOlj"]'  # кнопка "Зарегистрироваться"
+class TestLocators:
 
-cls_registration_name_button = '//input[@class="text input__textfield text_type_main-default"]'  # поле для ввода почты при авторизации и поле для ввода имени при регистрации
+    cls_login_button = (By.XPATH, '(//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"])')  # кнопка войти
 
-cls_registration_password_button = '//input[@type="password"]' # поле для ввода пароля на вкладке регистрации
+    cls_registration_button = (By.XPATH, '//a[@href="/register"]')  # кнопка "Зарегистрироваться"
 
-cls_button_for_regestr = '//a[@class="Auth_link__1fOlj"]'  # кнопка регистрация
+    cls_registration_name_button = (By.XPATH, "(//input[@name= 'name'])[1]")  # поле для ввода почты при авторизации и поле для ввода имени при регистрации
 
-user_password_or_registration_mail = '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input'  # Либо поле пароль на вкладке авторизации, либо поле ввода для майла при регистрации
+    cls_registration_password_button = (By.XPATH, '//input[@type="password"]') # поле для ввода пароля на вкладке регистрации
 
-accept_button = '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]'  # Кнопка подтверждения регистрации
+    cls_button_for_regestr = (By.XPATH, '//a[@class="Auth_link__1fOlj"]')  # кнопка регистрация
 
-personal_area_button = '/html/body/div/div/header/nav/a/p'  # Личный кабинет
+    user_password = (By.XPATH, '//input[@type="password"]') # Поле для ввода пароля
 
-password_recovery_button = '//*[@id="root"]/div/main/div/div/p[2]/a'  # Кнопка восстановления пароля
+    registration_mail = (By.XPATH, "(//input[@name= 'name'])[2]")  # поле ввода для майла при регистрации
 
-password_recovery_button_mail = '//*[@id="root"]/div/main/div/form/fieldset/div/div/input' # Поле восстановление пароля (почта)
+    accept_button = (By.XPATH, '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]')  # Кнопка подтверждения регистрации
 
-letter_mail = '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/label' # Поле почтового кода
+    personal_area_button = (By.XPATH, '(//p[@class="AppHeader_header__linkText__3q_va ml-2"])[3]')  # Личный кабинет
 
-personal_account = '//*[@id="root"]/div/header/nav/a/p'  # Личный кабинет
+    password_recovery_button = (By.XPATH, '//a[@href="/forgot-password"]')  # Кнопка восстановления пароля
 
-constructor_button = '//*[@id="root"]/div/header/nav/ul/li[1]/a/p'  # кнопка "Конструктор"
+    password_recovery_button_mail = (By.XPATH, '//input[@class="text input__textfield text_type_main-default"]') # Поле восстановление пароля (почта)
 
-logo_button = '//div[@class="AppHeader_header__logo__2D0X2"]'  # логотип бургерной
+    letter_mail = (By.XPATH, '//input[@type="text"]') # Поле почтового кода
 
-logout_button = '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]' # кнопка выхода из аккаунта в личном кабинете
+    constructor_button = (By.XPATH, '(//p[@class="AppHeader_header__linkText__3q_va ml-2"])[1]')  # кнопка "Конструктор"
 
-rolls_button = '//*[@id="root"]/div/main/section[1]/div[1]/div[1]/span' # вкладка булок в консруктуре
+    logo_button = (By.XPATH, '//div[@class="AppHeader_header__logo__2D0X2"]')  # логотип бургерной
 
-sauce_button = '//*[@id="root"]/div/main/section[1]/div[1]/div[2]/span' # вкладка соусов в консруктуре
+    logout_button = (By.XPATH, '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]') # кнопка выхода из аккаунта в личном кабинете
 
-fillings_button = '//*[@id="root"]/div/main/section[1]/div[1]/div[3]/span' #вкладка начинок в консруктуре
+    rolls_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[1]') # вкладка булок в консруктуре
 
-error_password_text = '//p[@class="input__error text_type_main-default"]' # сообщение об ошибке в пароле (недостаточно символов)
+    sauce_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[2]') # вкладка соусов в консруктуре
 
-profile_button = '//a[@class="Account_link__2ETsJ text text_type_main-medium text_color_inactive Account_link_active__2opc9"]' # кнопка "профиль" в личном кабинете
+    fillings_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[3]') #вкладка начинок в консруктуре
 
-assemble_the_burger = '//h1[@class="text text_type_main-large mb-5 mt-10"]' # Надпись на главной страние "Соберите бургер"
+    error_password_text = (By.XPATH, '//p[@class="input__error text_type_main-default"]') # сообщение об ошибке в пароле (недостаточно символов)
 
-selected_element = '//div[@class="tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]/span' # выделенный элемент в конструкторе
+    profile_button = (By.XPATH, '//a[@class="Account_link__2ETsJ text text_type_main-medium text_color_inactive Account_link_active__2opc9"]') # кнопка "профиль" в личном кабинете
+
+    assemble_the_burger = (By.XPATH, '//h1[@class="text text_type_main-large mb-5 mt-10"]') # Надпись на главной страние "Соберите бургер"
+
+    selected_element = (By.XPATH, '//div[@class="tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]/span')  # выделенный элемент в конструкторе
