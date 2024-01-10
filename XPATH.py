@@ -19,7 +19,7 @@ class TestLocators:
 
     accept_button = (By.XPATH, '//button[@class="button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa"]')  # Кнопка подтверждения регистрации
 
-    personal_area_button = (By.XPATH, '(//p[@class="AppHeader_header__linkText__3q_va ml-2"])[3]')  # Личный кабинет
+    personal_area_button = (By.XPATH, '//p[text()="Личный Кабинет"]')  # Личный кабинет
 
     password_recovery_button = (By.XPATH, '//a[@href="/forgot-password"]')  # Кнопка восстановления пароля
 
@@ -27,17 +27,17 @@ class TestLocators:
 
     letter_mail = (By.XPATH, '//input[@type="text"]') # Поле почтового кода
 
-    constructor_button = (By.XPATH, '(//p[@class="AppHeader_header__linkText__3q_va ml-2"])[1]')  # кнопка "Конструктор"
+    constructor_button = (By.XPATH, '//p[text()="Конструктор"]')  # кнопка "Конструктор"
 
     logo_button = (By.XPATH, '//div[@class="AppHeader_header__logo__2D0X2"]')  # логотип бургерной
 
     logout_button = (By.XPATH, '//button[@class="Account_button__14Yp3 text text_type_main-medium text_color_inactive"]') # кнопка выхода из аккаунта в личном кабинете
 
-    rolls_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[1]') # вкладка булок в консруктуре
+    rolls_button = (By.XPATH, '//span[text()="Булки"]') # вкладка булок в консруктуре
 
-    sauce_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[2]') # вкладка соусов в консруктуре
+    sauce_button = (By.XPATH, '//span[text()="Соусы"]') # вкладка соусов в консруктуре
 
-    fillings_button = (By.XPATH, '(//span[@class="text text_type_main-default"])[3]') #вкладка начинок в консруктуре
+    fillings_button = (By.XPATH, '//span[text()="Начинки"]') #вкладка начинок в консруктуре
 
     error_password_text = (By.XPATH, '//p[@class="input__error text_type_main-default"]') # сообщение об ошибке в пароле (недостаточно символов)
 
